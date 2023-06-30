@@ -18,11 +18,22 @@
         let rock;
         let paper;
         let scissors;
+        let CompChoice
     
 
         //create a computer function getComputerChoice
         //made the computer randomly chose one of the options
         //check if it works
+        function getComputerChoice() {
+            CompChoice = Math.random() * 100;
+            if (CompChoice <= 34) {
+                return CompChoice = 'rock';
+            } else if (CompChoice <= 67){
+                return CompChoice = 'paper';
+            } else {
+                return CompChoice = 'scissors';
+            }
+        }
 
         //create equation of R P S - or function?
 
