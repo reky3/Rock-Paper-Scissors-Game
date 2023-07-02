@@ -15,10 +15,8 @@
         //create a var for paper
         //create a var for scissors
         //create a group for these options
-        let rock;
-        let paper;
-        let scissors;
-        let CompChoice
+    
+        var CompChoice;
     
 
         //create a computer function getComputerChoice
@@ -36,12 +34,36 @@
         }
 
         //create equation of R P S - or function?
-
+        function getPlayerChoice(){
+            let PlaSelect = prompt("Rock, Paper or Scissors? Choose one: ").toLowerCase();
+            return PlaSelect;
+        }
 
         //only one round for now
+        function PlayRound(PlayerSelection, ComputerSelection){
+            if (PlayerSelection === ComputerSelection){
+                return "It's a tie!";
+            } else if (PlayerSelection === "rock" && ComputerSelection === "scissors"){
+                return "Rock beats Scissors! You Won!";
+            } else if (PlayerSelection === "rock" && ComputerSelection === "paper"){
+                return "Paper beats Rock! You Lost!";
+            } else if (PlayerSelection === "paper" && ComputerSelection === "rock"){
+                return "Paper beats Rock! You Won!";
+            } else if (PlayerSelection === "paper" && ComputerSelection === "scissors"){
+                return "Scissors beat Paper! You Lost!";
+            } else if (PlayerSelection === "scissors" && ComputerSelection === "paper"){
+                return "Scissors beat Paper! You Won!";
+                // here player has scissors and computer has rock
+            } else {
+                return "Rock beats Scissors! You Lost!";
+            }
+        }
 
         //create player selection
         //create computer selection
+        let PlayerSelection = getPlayerChoice();
+        let ComputerSelection = getComputerChoice();
+        console.log(PlayRound(PlayerSelection, ComputerSelection));
         //create prompt for user to choose - make it case insensitive
         //create function where it would compare both selections and output a message
 
