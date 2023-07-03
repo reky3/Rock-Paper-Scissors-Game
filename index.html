@@ -17,6 +17,9 @@
         //create a group for these options
     
         var CompChoice;
+        let scorePlayer = 0;
+        let scoreComputer = 0;
+        var answer;
     
 
         //create a computer function getComputerChoice
@@ -45,17 +48,24 @@
                 return "It's a tie!";
             } else if (PlayerSelection === "rock" && ComputerSelection === "scissors"){
                 return "Rock beats Scissors! You Won!";
+                scorePlayer++;
             } else if (PlayerSelection === "rock" && ComputerSelection === "paper"){
                 return "Paper beats Rock! You Lost!";
+                scoreComputer++;
             } else if (PlayerSelection === "paper" && ComputerSelection === "rock"){
                 return "Paper beats Rock! You Won!";
+                scorePlayer++;
             } else if (PlayerSelection === "paper" && ComputerSelection === "scissors"){
                 return "Scissors beat Paper! You Lost!";
+                scoreComputer++;
             } else if (PlayerSelection === "scissors" && ComputerSelection === "paper"){
                 return "Scissors beat Paper! You Won!";
-                // here player has scissors and computer has rock
+                scorePlayer++;
+            } else if (PlayerSelection === 'scissors' && ComputerSelection === 'rock') {
+                return answer = "Rock beats Scissors! You Lost!";
+                scoreComputer++;
             } else {
-                return "Rock beats Scissors! You Lost!";
+                return answer = "We don't understand this";
             }
         }
 
@@ -63,7 +73,23 @@
         //create computer selection
         let PlayerSelection = getPlayerChoice();
         let ComputerSelection = getComputerChoice();
-        console.log(PlayRound(PlayerSelection, ComputerSelection));
+        
+        function game() {
+            for (let i = 1; i < 5; i++){
+
+            PlayerSelection = getPlayerChoice();
+            ComputerSelection = getComputerChoice();
+            console.log(PlayRound(PlayerSelection, ComputerSelection));
+            }   
+      
+            console.log("Game ended.");
+            console.log("Your score is", scorePlayer );
+        }
+        
+        console.log(game());
+        //console.log("Your score is", scorePlayer);
+
+
         //create prompt for user to choose - make it case insensitive
         //create function where it would compare both selections and output a message
 
