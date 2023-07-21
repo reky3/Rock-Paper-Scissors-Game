@@ -2,7 +2,6 @@
 
 A web interactive game of Rock Paper Scissors.
 
-As for now it works only in console. Will work on the game to show up on the webpage.
 
 ## Credits
 
