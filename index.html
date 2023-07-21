@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title> Rock Paper Scissors Game </title>
+    <link rel="Peace sign emoji by Flaticon" href="https://cdn-icons-png.flaticon.com/512/9125/9125095.png">
 </head>
 <body>
     <h1>Rock Paper Scissors Game</h1>
@@ -25,7 +26,6 @@
         //create a variable for rock
         //create a var for paper
         //create a var for scissors
-        //create a group for these options
     
         var CompChoice;
         var answer;
@@ -34,9 +34,9 @@
         let scoreComputer = null;
         let scorePlayer = null;
 
-
+        //player selects their choice with buttons
         buttons.forEach(button => (button.addEventListener('click', () => {
-          if (scorePlayer >= 10 || scoreComputer >= 10) {
+          if (scorePlayer >= 5 || scoreComputer >= 5) {
           return;
           }
             else {
@@ -44,11 +44,8 @@
                 let computerSelection = getComputerChoice();
                 PlayRound(playerSelection, computerSelection);
             }
-        }
-  )));
+        })));
         //create a computer function getComputerChoice
-        //made the computer randomly chose one of the options
-        //check if it works
         function getComputerChoice() {
             CompChoice = Math.random() * 100;
             if (CompChoice <= 34) {
@@ -89,18 +86,6 @@
                 answer.textContent = "We don't understand this";
             }
         }
-
-        //create player selection
-        //create computer selection
-        let PlayerSelection = getPlayerChoice();
-        let ComputerSelection = getComputerChoice();
-        
-
-        //create prompt for user to choose - make it case insensitive
-        //create function where it would compare both selections and output a message
-
-        //later emball this code with the game function that will have 3 rounds.
-        //make an option to repeat the game
         
     </script>
 
